@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "*") // OR use your frontend origin instead of '*'
 @RestController
 @RequestMapping("/user")
 public class UserController {
