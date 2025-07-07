@@ -22,6 +22,8 @@ public class SecurityConfigue  {
                     .antMatchers("/public/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
+                .formLogin()
+                .and()
                 .httpBasic();
 
         return http.build();
