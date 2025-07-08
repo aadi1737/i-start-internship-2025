@@ -16,10 +16,11 @@ public class SecurityConfigue  {
         http
                 .csrf().disable()
                 .authorizeHttpRequests()
+                    .antMatchers("/public/**").permitAll()
                 .antMatchers(HttpMethod.POST,"/user").permitAll()
+                .antMatchers("/user/i-start").permitAll()
                     .antMatchers("/user/**").authenticated()
                     .antMatchers("/note/**").authenticated()
-                    .antMatchers("/public/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
                 .formLogin()

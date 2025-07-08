@@ -14,6 +14,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class NoteController {
         return dtoList;
     }
     @PostMapping
-    public ResponseEntity<?> createNote(@RequestBody NoteRequestDTO dto) {
+    public ResponseEntity<?> createNote(@RequestBody @Valid NoteRequestDTO dto) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         UserEntity user = userRepository.findByUserName(username);
