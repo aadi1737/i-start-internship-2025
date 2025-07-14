@@ -28,6 +28,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
                     .build();
             return userDetails;
         }
-        throw new UsernameNotFoundException("nahi mila user "+username+" Name ka mai bhi kya kar skat hu!");
+        throw new UsernameNotFoundException("nahi mila !"+username+" Name ka User to mai bhi kya kar skat hu!");
     }
 }

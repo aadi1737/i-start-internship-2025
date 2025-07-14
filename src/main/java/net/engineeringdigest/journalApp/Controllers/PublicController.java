@@ -1,14 +1,28 @@
 package net.engineeringdigest.journalApp.Controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import net.engineeringdigest.journalApp.DTOs.LoginDTO;
+import net.engineeringdigest.journalApp.Service.PublicService;
+import net.engineeringdigest.journalApp.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/public")
 public class PublicController {
-    @GetMapping("/i-start")
-    public String welcome(){
-        return "We welcome you to the incubation center!";
+
+    @Autowired
+    private PublicService publicService;
+    @GetMapping("/greet")
+    public String welcome(HttpServletRequest request){
+        return "Tashi Dilek!"+request.getSession().getId();
+    }
+
+
+    @PostMapping("/login")
+    public String login(@RequestBody @Valid LoginDTO dto){
+        String verify = publicService.verify(dto);
+        return verify;
     }
 }

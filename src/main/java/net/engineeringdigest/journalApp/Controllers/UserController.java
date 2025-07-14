@@ -5,11 +5,9 @@ import net.engineeringdigest.journalApp.DTOs.UserResponseDTO;
 import net.engineeringdigest.journalApp.Entity.UserEntity;
 import net.engineeringdigest.journalApp.Repository.UserRepository;
 import net.engineeringdigest.journalApp.Service.UserService;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -21,10 +19,10 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @GetMapping
     public List<UserResponseDTO> getAllUsers(){

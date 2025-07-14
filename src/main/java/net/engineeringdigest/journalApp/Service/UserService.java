@@ -1,9 +1,15 @@
 package net.engineeringdigest.journalApp.Service;
 
+import net.engineeringdigest.journalApp.DTOs.LoginDTO;
 import net.engineeringdigest.journalApp.Entity.UserEntity;
 import net.engineeringdigest.journalApp.Repository.UserRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +20,10 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     public List<UserEntity> getAll(){
         List<UserEntity> allUser = userRepository.findAll();
@@ -34,5 +40,7 @@ public class UserService {
         Optional<UserEntity> byId = userRepository.findById(id);
         return byId.orElse(null);
     }
+
+
 
 }
