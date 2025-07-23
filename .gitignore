@@ -23,3 +23,6 @@ Thumbs.db
 
 # Java class files
 *.class
+
+
+src/main/resources/application.properties

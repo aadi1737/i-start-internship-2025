@@ -18,9 +18,7 @@ public class NoteEntity {
     private ObjectId id;
     private String title;
     private String content;
-
     @CreatedDate
     private Date createdDate;
-
     private ObjectId userId;
 }

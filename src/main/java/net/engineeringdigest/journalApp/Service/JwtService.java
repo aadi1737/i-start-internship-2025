@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 //import sun.security.provider.HmacDrbg;
@@ -21,18 +22,9 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private String secretKey="Hagemaru";
+    @Value("${jwt.secret}")
+    private String secretKey;
 
-    @PostConstruct
-    public void initSecretKey() {
-        try {
-            KeyGenerator generator = KeyGenerator.getInstance("HmacSHA256");
-            SecretKey genKey = generator.generateKey();
-            secretKey = Base64.getEncoder().encodeToString(genKey.getEncoded());
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-    }
     public String generateToken(String username) {
 
         Map<String,Object> claims = new HashMap<>();
