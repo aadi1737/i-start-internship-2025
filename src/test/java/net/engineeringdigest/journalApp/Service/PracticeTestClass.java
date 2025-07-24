@@ -18,7 +18,7 @@ public class PracticeTestClass {
     private UserRepository userRepository;
 
 
-    @Disabled
+
     @Test
     public void checkTest(){
         assertEquals(4,2+2);

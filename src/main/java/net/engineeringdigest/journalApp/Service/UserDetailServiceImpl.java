@@ -2,6 +2,7 @@ package net.engineeringdigest.journalApp.Service;
 
 import net.engineeringdigest.journalApp.Entity.UserEntity;
 import net.engineeringdigest.journalApp.Repository.UserRepository;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User;
 
 
+@Disabled
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 

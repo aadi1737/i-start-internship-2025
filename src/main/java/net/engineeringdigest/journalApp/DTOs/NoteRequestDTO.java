@@ -7,7 +7,6 @@ import org.bson.types.ObjectId;
 
 import javax.validation.constraints.NotBlank;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class NoteRequestDTO {
@@ -15,4 +14,20 @@ public class NoteRequestDTO {
     private String title;
     @NotBlank(message = "Content is Required")
     private String content;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }

@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginDTO {
@@ -15,4 +15,20 @@ public class LoginDTO {
     private String userName;
     @NotBlank(message = "Please Enter Password to Login.")
     private String password;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

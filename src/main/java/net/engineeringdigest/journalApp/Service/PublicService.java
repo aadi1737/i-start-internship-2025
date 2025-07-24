@@ -1,12 +1,14 @@
 package net.engineeringdigest.journalApp.Service;
 
 import net.engineeringdigest.journalApp.DTOs.LoginDTO;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+@Disabled
 @Service
 public class PublicService {
 

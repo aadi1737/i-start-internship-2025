@@ -3,6 +3,7 @@ package net.engineeringdigest.journalApp.Service;
 import net.engineeringdigest.journalApp.Entity.UserEntity;
 import net.engineeringdigest.journalApp.Repository.UserRepository;
 import org.bson.types.ObjectId;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+@Disabled
 @Service
 public class UserService {
 
